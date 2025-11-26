@@ -1,0 +1,121 @@
+#include <iostream>
+struct Planar {
+	virtual int x() const = 0;
+	virtual int y() const = 0;
+	virtual int abs_sqr() const = 0;
+	virtual ~Planar() = default;
+};
+
+struct Point : Planar {
+	virtual int x() const;
+	virtual int y() const;
+	virtual int abs_sqr() const;
+	Point(int xx, int yy);
+	virtual ~Point() = default;
+private:
+	int data[2];
+};
+Planar* make(std::istream & is);
+Planar* mostleft(Planar** is, size_t ls);
+Planar* make(size_t pl);
+void draw(Planar* pl);
+void free_planars(Planar** pls, size_t k);
+Planar* make(std::istream & is);
+Planar* mostleft(Planar** pls, size_t k);
+
+int main() {
+	size_t s = 0;
+	size_t c = 20;
+	Planar** pls = new Planar * [c];
+	while (std::cin) {
+
+			Planar* pl = nullptr;
+			try {
+				pl = make(std::cin);
+				if (s == c) {
+					Planar** epls = new Planar * [c * 2]; capacity
+						epls[i] = pls[i];
+				}
+				delete[] pls;
+				pls = epls;
+				c *= 2;
+				pls[s++] = pl;
+			}
+			catch (...) {
+				delete pl;
+				free_planars(pls, s); delete[] pls;  return 2;
+			}
+	}
+	draw(mostleft(pls, k));
+	free_planars(pls, k)
+	//pls[k++] = make(std::cin);
+	Planar* left = mostleft(pls, k);
+	//draw (left);
+	//free_planars(pls, k);
+}
+
+Planar* make(size_t id) {
+	Planar* r = nullptr;
+	switch (id) {
+		case 0;
+			r = new Point(0, 0);
+			break;
+		default:
+			throw std::logic_error("bad id");
+	}
+	return r;
+}
+
+Planar* make(size_t pl) {
+	switch (pl)
+	{
+		default;
+		throw std::logic_error("bad id")
+	}
+	return nullptr;
+}
+
+void free_planars(Planars** pls, size_t, k);
+{
+	for (size_t i = 0; i < k; ++i) {
+		delete pls[i];
+	}
+	void draw(Planars* pl) {
+		std::cout << pl->x()
+		std::cout << " ";
+		std::cout << pls ->y() << "\n"
+		}
+}
+
+Point::Point(int xx, int yy):
+	Planar(),
+	data*{xx, yy}
+ {}
+
+int Point::x() const {
+	return data[0];
+
+}
+int Point::abs_sqr() const {
+	return x(0) * x() + y() * y();
+}
+
+Planar* make(std::istream& is);
+{
+	char cmd[2] = {};
+	is >> cmd[0] >> cmd[1];
+	if (cmd[0] == 'P' && cmd[1] == 'T') {
+		if (is >> data[0] >> data[1]) {
+			return new Point(data[0], data[1]);
+		}
+	}
+	else if (cmd[0] == 'V' && cmd[1] == 'T') {
+		if (is >> data[0] >> data[1] >> data[2] >> data[3]) {
+			return new Vector(Point(data[0], data[1]), Poin(data[2], data[3]);
+		}
+	}
+	else {
+		throw std::logic_error("bad cmd");
+	}
+
+}
